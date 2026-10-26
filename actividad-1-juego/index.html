@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De freak a geek</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <h1>De freak a geek</h1>
+    </header>
+
+    <main class="game">
+        <p class="description">
+            Pon a prueba tus conocimientos de cultura web.
+            Responde ocho preguntas, consigue puntos y encadena
+            aciertos para conseguir un combo de puntuación.
+        </p>
+
+        <section id="quiz" aria-label="Juego de preguntas">
+            <article class="question-card">
+                <p id="progress" class="progress">Pregunta 1 de 8</p>
+                <h2 id="question-text">Cargando pregunta...</h2>
+            </article>
+
+            <div class="answers" id="answers" role="group"
+                 aria-label="Opciones de respuesta">
+                <button class="answer-card" type="button"></button>
+                <button class="answer-card" type="button"></button>
+                <button class="answer-card" type="button"></button>
+                <button class="answer-card" type="button"></button>
+            </div>
+
+            <p id="feedback" class="feedback" role="status"
+               aria-live="polite"></p>
+
+            <div class="game-actions">
+                <button id="validate-button" class="action-button"
+                        type="button">
+                    Validar respuesta
+                </button>
+
+                <button id="next-button" class="action-button"
+                        type="button" hidden>
+                    Siguiente pregunta
+                </button>
+            </div>
+
+            <section class="score-panel" aria-label="Puntuación">
+                <p>Puntuación: <strong id="score">0</strong></p>
+                <p>Combo: <strong id="combo">x1</strong></p>
+            </section>
+        </section>
+
+        <section id="results" class="results" hidden>
+            <h2>¡Juego terminado!</h2>
+            <p>Tu puntuación final es:</p>
+            <p id="final-score" class="final-score">0 puntos</p>
+            <button id="restart-button" class="action-button"
+                    type="button">
+                Reiniciar juego
+            </button>
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+:root {
+    --dark-green: #064734;
+    --light-green: #E0FFC2;
+    --white: #ffffff;
+    --correct: #d4f7dc;
+    --incorrect: #ffe0e0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--light-green);
+    color: var(--dark-green);
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    padding: 24px 16px;
+    background-color: var(--dark-green);
+    color: var(--light-green);
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: clamp(26px, 4vw, 40px);
+}
+
+.game {
+    width: min(100% - 32px, 760px);
+    margin: 40px auto;
+    text-align: center;
+}
+
+.description {
+    margin: 0 auto 30px;
+    max-width: 620px;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.question-card {
+    padding: 30px 24px;
+    background-color: var(--white);
+    border: 2px solid var(--dark-green);
+    border-radius: 14px;
+}
+
+.progress {
+    margin: 0 0 18px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.question-card h2 {
+    margin: 0;
+    font-size: clamp(20px, 3vw, 26px);
+    line-height: 1.4;
+}
+
+.answers {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.answer-card {
+    min-height: 100px;
+    padding: 18px;
+    background-color: var(--white);
+    color: var(--dark-green);
+    border: 2px solid var(--dark-green);
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+}
+
+.answer-card:hover {
+    background-color: #f1ffe4;
+}
+
+.answer-card.selected {
+    background-color: var(--dark-green);
+    color: var(--light-green);
+}
+
+.answer-card:focus-visible,
+.action-button:focus-visible {
+    outline: 4px solid #d17a00;
+    outline-offset: 4px;
+}
+
+.answer-card:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+.answer-card.correct {
+    background-color: var(--correct);
+    color: var(--dark-green);
+}
+
+.answer-card.incorrect {
+    background-color: var(--incorrect);
+    color: #7a2020;
+}
+
+.feedback {
+    min-height: 24px;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.game-actions {
+    margin: 20px 0;
+}
+
+.action-button {
+    padding: 14px 28px;
+    background-color: var(--dark-green);
+    color: var(--light-green);
+    border: 2px solid var(--dark-green);
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    background-color: #0a6349;
+}
+
+.score-panel {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 24px;
+    padding: 16px;
+    border-top: 2px solid var(--dark-green);
+}
+
+.score-panel p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.results {
+    padding: 40px 24px;
+    background-color: var(--white);
+    border: 2px solid var(--dark-green);
+    border-radius: 14px;
+}
+
+.final-score {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    .header {
+        padding: 20px 12px;
+    }
+
+    .game {
+        margin: 24px auto;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .question-card {
+        padding: 24px 16px;
+    }
+
+    .answers {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .answer-card {
+        min-height: 72px;
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    .score-panel {
+        gap: 20px;
+    }
+
+    .score-panel p {
+        font-size: 16px;
+    }
+}
