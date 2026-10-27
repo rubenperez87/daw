@@ -318,12 +318,12 @@ document.addEventListener("keydown", event => {
             return;
         }
 
-        // Evitar validar dos veces al activar una respuesta.
+        event.preventDefault();
+
         if (answerButtons.includes(event.target)) {
-            return;
+            selectAnswer(answerButtons.indexOf(event.target));
         }
 
-        event.preventDefault();
         validateAnswer();
     }
 });
